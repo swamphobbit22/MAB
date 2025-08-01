@@ -17,7 +17,10 @@ export class EventListComponent implements OnInit{
   constructor(private eventService: EventService) {}
 
   ngOnInit() {
-    this.events = this.eventService.getEvents();
+    // this.events = this.eventService.getEvents();
+    this.eventService.event$.subscribe((updatedEvents) => {
+      this.events = updatedEvents;
+    });
   }
 
 }

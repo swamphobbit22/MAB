@@ -1,26 +1,30 @@
 <div>
   <h1>Add a New Event</h1>
-  <form (ngSubmit)="onSubmit()" class="modal-popup">
+  <form (ngSubmit)="onSubmit( title.value, date.value, time.value, location.value, desc.value)" class="modal-popup" id="event-form">
     <div class="form">
       <label for="date">Title:</label>
-      <input type="text" id="title" placeholder="Name of Event">
+      <input type="text" #title placeholder="Name of Event">
       
       <label>Date:</label>
-      <input type="text" id="date" placeholder="Date of Event">
+      <input type="text" #date placeholder="Date of Event">
       
       <label for="time">Time:</label>
-      <input type="text" id="time" placeholder="Time of Event">
+      <input type="text" #time placeholder="Time of Event">
 
       <label for="">Location/Venue:</label>
-      <input type="text" id="location" placeholder="Enter the name of the venue and address">
+      <input type="text" #location placeholder="Enter the name of the venue and address">
 
       <label for="">Description:</label>
-      <input type="text" id="desc" placeholder="Description of the event">
+      <textarea type="text" #desc rows="4" cols="40" placeholder="Description of the event"></textarea>
     </div>
     <br>
-    <div class="button-group">
-      <button type="button" class="btn-submit btn">Submit</button>
+
+  </form>
+      <div class="button-group">
+      <button type="submit" form="event-form" class="btn-submit btn" >Submit</button>
       <button type="button" class="btn-cancel btn" (click)="onCancel()">Cancel</button>
     </div>
-  </form>
 </div>
+
+
+<!-- onSubmit( title.value, date.value, time.value, location.value, desc.value) -->

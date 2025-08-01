@@ -12,13 +12,13 @@
         Add an Event
     </button>
 
-    <div *ngIf="showModal" class="modal-backdrop">
+    <div *ngIf="showModal" class="modal-popup">
       <div class="modal-box">
         <app-form-modal (close)="showModal = false"></app-form-modal>
       </div>
       </div>
     </div>
-    
+
     <div class="">
       <app-event-list> </app-event-list>
    

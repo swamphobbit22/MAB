@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 export interface Event {
   id: number;
@@ -36,14 +37,26 @@ export class EventService {
   ]
 
   //set the next id to 3 - then to be incrementd for add event
-  // private nextID = 3
+  private nextID = 3;
+
+  private eventsSubject = new BehaviorSubject<Event[]>(this.events);
+  event$ = this.eventsSubject.asObservable();
 
   getEvents(): Event[] {
+    console.log(this.events, '<<< all events')
     return this.events;
   }
 
-  addEvent(event: Event) {
-    this.events.push(event)
+  addEvent(event: Omit<Event, 'id'>) {
+    const newEvent: Event = {
+      id: this.nextID++,
+      ...event
+    };
+
+    this.events.push(newEvent);
+    this.eventsSubject.next([...this.events])
+    console.log(newEvent, '<<< the new event')
+   
   }
- 
+  
 }
