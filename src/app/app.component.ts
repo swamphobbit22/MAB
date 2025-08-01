@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { EventListComponent } from './event-list/event-list.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, EventListComponent],
-  templateUrl: './app.component.html',
+  imports: [RouterOutlet, HomeComponent, HeaderComponent],
+  template: `
+    <app-header />
+    <main>
+      <app-home />
+    </main>
+    
+  `,
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = "Kirsty's Amazing Events App";
 
-
-  handleClick() {
-    console.log('Button has been clicked')
-    
-  }
 }
+
+
+
+// EventListComponent
+// templateUrl: './app.component.html',

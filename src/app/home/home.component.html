@@ -1,0 +1,29 @@
+<section class="home-body">
+  <div class="content">
+    <div class="left-side">
+      <p style="text-align: center;" class="subtitle">We are cooking with gas. 🎉</p>
+      <br>
+    </div>
+    <div class="" role="" aria-label="">
+      <button 
+        class="btn"
+        (click)="showModal = true" 
+        >
+        Add an Event
+    </button>
+
+    <div *ngIf="showModal" class="modal-backdrop">
+      <div class="modal-box">
+        <app-form-modal (close)="showModal = false"></app-form-modal>
+      </div>
+      </div>
+    </div>
+    
+    <div class="">
+      <app-event-list> </app-event-list>
+   
+    </div>
+  </div>
+
+
+</section>
