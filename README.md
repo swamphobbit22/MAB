@@ -1,9 +1,21 @@
 # Kirsty's Amazing Events App
 
+## View App
+You can view the app here https://mab-one.vercel.app/ - I warn you - it's not pretty!
 
-# EventsApp
+### Note: 
+The implementation is slightly different from the plan and the project is current ly incomplete. It display events and users can add an event but other functionality has yet to be implemented and data does not persist when the browser is refreshed. In the current working prototype, a template-driven approach was used, but the form structure can be  refactored into a reactive form if needed. 
+
+
+## Please see below for instructions to set up and run 
+
+
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+
+Fork and clone the project from the github repository
+You will need node installed as well as the Angular CLI. 
+
 
 ## Development server
 
