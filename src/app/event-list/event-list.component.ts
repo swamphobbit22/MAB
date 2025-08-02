@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { EventService } from '../event.service';
 
 @Component({
   selector: 'app-event-list',
-  imports: [NgFor],
+  imports: [NgFor, NgIf],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
 })
@@ -23,4 +23,5 @@ export class EventListComponent implements OnInit{
     });
   }
 
+  
 }

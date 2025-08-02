@@ -22,7 +22,7 @@ export class EventService {
       id: 1, 
       title: 'Rock Out Weekend',
       date: '30/08/2025',
-      time: '10.00 am',
+      time: '10:00 am',
       location: 'Derby',
       description: 'Come and rock out in Derby for a weekend of fun on the 30th August 2025. All your favourite bands'
     },
@@ -30,7 +30,7 @@ export class EventService {
       id: 2,
       title: 'Madness',
       date: '10/09/2025',
-      time: '7pm',
+      time: '19:00',
       location: 'Rock City, Nottingham',
       description: 'Come and party at Rock City!'
     }

@@ -29,3 +29,24 @@ hr{
   width: 60%;
   border-radius: 50px;
 }
+
+.btn{
+ padding: 8px 16px ;
+ border-radius: 25px;
+}
+
+.btn-delete{
+ background-color: rgb(247, 15, 15);
+ color: white;
+}
+
+.btn-delete:hover{
+  background-color:  rgb(156, 13, 13);
+  color: white;
+  cursor: pointer;
+}
+
+.delete-div{
+  display: flex;
+  justify-content: right;
+}
