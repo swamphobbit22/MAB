@@ -16,7 +16,7 @@ export interface Event {
 
 
 export class EventService {
-  // test list
+
   private events: Event[] = [
     {
       id: 1, 
@@ -36,14 +36,15 @@ export class EventService {
     }
   ]
 
-  //set the next id to 3 - then to be incrementd for add event
+  private storageKey = 'events';
+  constructor() {this.loadFromLocalStorage()};
+
   private nextID = 3;
 
   private eventsSubject = new BehaviorSubject<Event[]>(this.events);
   event$ = this.eventsSubject.asObservable();
 
   getEvents(): Event[] {
-    console.log(this.events, '<<< all events')
     return this.events;
   }
 
@@ -54,9 +55,40 @@ export class EventService {
     };
 
     this.events.push(newEvent);
+    this.saveToLocalStorage()
     this.eventsSubject.next([...this.events])
-    console.log(newEvent, '<<< the new event')
-   
   }
+
+  private loadFromLocalStorage(): void {
+    try {
+      const value = localStorage.getItem(this.storageKey);
+      if(value) {
+        this.events = JSON.parse(value);
+
+        if(this.events.length > 0) {
+          const maxId =  Math.max(...this.events.map(event => event.id));
+          this.nextID = maxId + 1;
+        }
+        this.eventsSubject.next([...this.events])
+      }
+      
+    } catch (error) {
+      console.error('Error - cannot read from local storage');
+    }
+  }
+
+  private saveToLocalStorage(): void {
+    try {
+      const jsonValue = JSON.stringify(this.events);
+      localStorage.setItem(this.storageKey, jsonValue)
+    } catch (error) {
+      console.error('Error - cannot save to local storage');
+    }
+  }
+
+  // remove from local storage
+
+  // cleanup local storage
   
 }
+

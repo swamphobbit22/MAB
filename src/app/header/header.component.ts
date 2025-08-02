@@ -7,5 +7,5 @@ import { Component, signal } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-title = signal("Kirsty's Amazing Events App - Almost!!");
+title = signal("Kirsty's Amazing Events App");
 }
