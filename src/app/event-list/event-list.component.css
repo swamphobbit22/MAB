@@ -18,7 +18,7 @@ h3{
 .desc{
    font-style: italic;
    flex-wrap: wrap;
-   background-color: rgb(197, 215, 223);
+   background-color: rgb(228, 210, 233);
    padding: 10px;
    border-radius: 5px;
 }
@@ -51,15 +51,9 @@ hr{
   justify-content: right;
 }
 
-   @media screen and (max-width: 650px) {
-
-    .btn-small{
-      display: flex;
-      justify-content: center;
-    }
-    
-    /* .content {
-      flex-direction: column;
-      width: max-content;
-    } */
-   }
+@media screen and (max-width: 650px) {
+  .btn-small{
+    display: flex;
+    justify-content: center;
+  }
+}

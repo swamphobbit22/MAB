@@ -12,6 +12,7 @@ import { EventService } from '../event.service';
 
 export class EventListComponent implements OnInit{
   events: any[] = [];
+  
 
   //contrscutor injects service
   constructor(private eventService: EventService) {}
@@ -23,5 +24,8 @@ export class EventListComponent implements OnInit{
     });
   }
 
-  
+  onDelete(id: number){
+    alert('You are about to delete an event!')
+   this.eventService.removeItem(id) 
+  }
 }
