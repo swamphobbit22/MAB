@@ -1,5 +1,5 @@
   .home-body{
-    padding:5rem;
+    padding: 6rem;
   }
 
   .subtitle{
@@ -42,15 +42,15 @@
   z-index: 1000;
  }
 
-   @media screen and (max-width: 650px) {
+@media screen and (max-width: 650px) {
 
-    .btn-small{
-      display: flex;
-      justify-content: center;
-    }
-    
-    /* .content {
-      flex-direction: column;
-      width: max-content;
-    } */
-   }
+  .btn-small{
+    display: flex;
+    justify-content: center;
+}
+
+  .home-body{
+    padding-top:8rem;
+    padding-inline: 1rem;
+  }
+}
