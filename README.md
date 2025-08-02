@@ -1,10 +1,10 @@
 # Kirsty's Amazing Events App
 
 ## View App
-You can view the app here https://mab-one.vercel.app/ - I warn you - it's not pretty!
+You can view the app here https://mab-one.vercel.app/ 
 
 ### Note: 
-The implementation is slightly different from the plan and the project is current ly incomplete. It display events and users can add an event but other functionality has yet to be implemented and data does not persist when the browser is refreshed. In the current working prototype, a template-driven approach was used, but the form structure can be  refactored into a reactive form if needed. 
+The implementation is slightly different from the plan and the project is currently incomplete. It display events and users can add an event but other functionality has yet to be implemented and data does not persist when the browser is refreshed. In the current working prototype, a template-driven approach was used, but the form structure can be  refactored into a reactive form if needed. 
 
 
 ## Please see below for instructions to set up and run 
