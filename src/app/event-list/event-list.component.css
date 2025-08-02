@@ -50,3 +50,16 @@ hr{
   display: flex;
   justify-content: right;
 }
+
+   @media screen and (max-width: 650px) {
+
+    .btn-small{
+      display: flex;
+      justify-content: center;
+    }
+    
+    /* .content {
+      flex-direction: column;
+      width: max-content;
+    } */
+   }
