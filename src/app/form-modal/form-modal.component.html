@@ -1,30 +1,28 @@
 <div>
   <h1>Add a New Event</h1>
-  <form (ngSubmit)="onSubmit( title.value, date.value, time.value, location.value, desc.value)" class="modal-popup" id="event-form">
+  <form [formGroup]="applyForm" class="modal-popup" id="event-form"  (ngSubmit)="onSubmit()" >
     <div class="form">
-      <label for="date">Title:</label>
-      <input type="text" #title placeholder="Name of Event">
+      <label for="title">Title:</label>
+      <input id="title" type="text" formControlName="title" placeholder="Name of Event" required>
       
       <label>Date:</label>
-      <input type="date" #date placeholder="Date of Event">
+      <input id="date" type="date" formControlName="date" placeholder="Date of Event" min="01-01-1900" max="01-01-2100" required>
       
       <label for="time">Time:</label>
-      <input type="time" #time placeholder="Time of Event">
+      <input id="time" type="time" formControlName="time" placeholder="Time of Event"  required>
 
-      <label for="">Location/Venue:</label>
-      <input type="text" #location placeholder="Enter the name of the venue and address">
+      <label for="location">Location/Venue:</label>
+      <input id="location" type="text" formControlName="location" placeholder="Enter the name of the venue and address" required>
 
-      <label for="">Description:</label>
-      <textarea type="text" #desc rows="4" cols="40" placeholder="Description of the event"></textarea>
+      <label for="description">Description:</label>
+      <textarea id="description" type="text" formControlName="description" rows="4" cols="40" placeholder="Description of the event" required></textarea>
     </div>
     <br>
-
-  </form>
-      <div class="button-group">
-      <button type="submit" form="event-form" class="btn-submit btn" >Submit</button>
+    <div class="button-group">
+      <button type="submit" form="event-form" class="btn-submit btn" [disabled]="!applyForm.valid" >Submit</button>
       <button type="button" class="btn-cancel btn" (click)="onCancel()">Cancel</button>
     </div>
+  </form>
+
 </div>
 
-
-<!-- onSubmit( title.value, date.value, time.value, location.value, desc.value) -->
