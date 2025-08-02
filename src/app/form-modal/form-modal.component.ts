@@ -24,13 +24,9 @@ export class FormModalComponent {
 
   onSubmit(event?: Event) {
     event?.preventDefault();
-    // console.log('onSubmit called')
-    // console.log('form date: ',{ title, date, time, location, desc})
     const { title, date, time, location, description} = this.applyForm.value;
 
 
-    // const formValues = this.applyForm.value;
-    //send data to service file
     const newEvent = {
       title: title!, 
       date: date!,
@@ -39,11 +35,8 @@ export class FormModalComponent {
       description: description!,
     };
 
-    
-    // passing it to service file
-    // this.eventService.addEvent(newEvent)
     this.eventService.addEvent(newEvent)
-    // return false;
+    
     this.close.emit()
   }
 
