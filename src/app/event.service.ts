@@ -86,9 +86,16 @@ export class EventService {
     }
   }
 
-  // remove from local storage
+  // remove from local storage - remove just one
+  removeItem(eventId: number): void {
+    this.events = this.events.filter(event => event.id !== eventId)
+    this.saveToLocalStorage();
+    this.eventsSubject.next([...this.events])
+  }
 
   // cleanup local storage
-  
+  clear(): void {
+    localStorage.clear();
+  }
 }
 
