@@ -13,4 +13,5 @@ header{
   color: white;
   align-items: center;
   justify-content: space-between;
+  z-index: 5000;
 }

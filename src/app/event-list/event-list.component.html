@@ -4,11 +4,14 @@
   <div *ngIf = "events.length === 0">
     There are no events to display
   </div>
-  <div *ngFor = "let event of events" class="list">
+  <div *ngFor = "let event of events" 
+    [ngClass]="{'past-event': isPast(event.date)}" 
+    class="list"
+    >
     <h3 class="">{{event.title}}</h3> 
     <div class="info"> 
       <p id="id" hidden>{{event.id}}</p>
-      Date: {{event.date}} 
+      Date: {{event.date }} 
       <p>Time: {{event.time}}</p>
       <p>Location: {{event.location}}</p>
       <p class="desc">{{event.description}}</p>

@@ -60,6 +60,12 @@ hr{
   padding: 10px;
 }
 
+.past-event {
+  color: gray;
+  opacity: 0.6;
+}
+
+
 @media screen and (max-width: 650px) {
   .btn-small{
     display: flex;
