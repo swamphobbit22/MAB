@@ -21,7 +21,7 @@ export class EventListComponent implements OnInit{
     // this.events = this.eventService.getEvents();
     this.eventService.event$.subscribe((updatedEvents) => {
       // this.events = updatedEvents;
-      this.events = updatedEvents.sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime()); 
+      this.events = updatedEvents.sort((a,b) => new Date(b.date).getTime() - new Date(a.date).getTime()); 
     });
   }
 
